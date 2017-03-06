@@ -1,0 +1,154 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>WebSearchScraper</groupId>
+	<artifactId>WebSearchScraper</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.7.201606060606</version>
+
+				<executions>
+					<!--execution>
+						<id>pre-unit-test</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+						<configuration>
+							<destFile>${project.build.directory}/coverage-reports/jacoco-ut.exec</destFile>
+							<propertyName>surefireArgLine</propertyName>
+						</configuration>
+					</execution>
+					<execution>
+						<id>post-unit-test</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<dataFile>${project.build.directory}/coverage-reports/jacoco-ut.exec</dataFile>
+							<outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
+						</configuration>
+					</execution-->
+					<execution>
+						<id>default-prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>asm</groupId>
+			<artifactId>asm</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160810</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>2.24</version>
+		</dependency>
+		<!-- if you are using Jersey client specific features without the server 
+			side -->
+		<dependency>
+			<groupId>org.glassfish.jersey.core</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>2.24</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-moxy -->
+		<dependency>
+			<groupId>org.glassfish.jersey.media</groupId>
+			<artifactId>jersey-media-moxy</artifactId>
+			<version>2.24</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-dependency-plugin -->
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-dependency-plugin</artifactId>
+			<version>2.10</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.13</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.easymock/easymock -->
+		<dependency>
+			<groupId>org.easymock</groupId>
+			<artifactId>easymock</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.powermock/powermock-api-mockito -->
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-mockito</artifactId>
+			<version>1.6.6</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.powermock/powermock-module-junit4-common -->
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-module-junit4</artifactId>
+			<version>1.6.6</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.powermock/powermock-api-easymock -->
+		<dependency>
+			<groupId>org.powermock</groupId>
+			<artifactId>powermock-api-easymock</artifactId>
+			<version>1.6.6</version>
+		</dependency>
+	</dependencies>
+</project>
